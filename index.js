@@ -1,11 +1,14 @@
 var express = require("express");
 var app = express();
+var cors = require('cors')
 var fs = require("fs");
 var db = require('./db')
 var userservice = require('./service/user.service')
 
 let PORT = 4000;
-
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 
 app.use("/user", require('./service/user.service'));
