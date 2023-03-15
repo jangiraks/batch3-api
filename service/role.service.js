@@ -23,7 +23,7 @@ router.put("/update/:id", async (req, res, next) => {
 );
 
 router.delete("/delete/:id", async (req, res, next) => {
-    await db.roles.deleteOne({ _id: req.params.id })
+    await db.role.deleteOne({ _id: req.params.id })
     res.send("Record delete successfully!!!");
 }
 );

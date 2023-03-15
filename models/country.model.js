@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const countryschema = new mongoose.Schema({
-    name: String,
+  name: String,
     states: [{ type: Schema.Types.ObjectId, ref: 'state' }],
-});
-
-module.exports = {
+  });
+  
+  module.exports = {
     countryschema
-}
+  }
+  

@@ -1,37 +1,29 @@
 var express = require("express");
 const router = express.Router();
 
-var db = require("./../db");
-
+var db = require("../db");
 
 router.post("/save", (req, res, next) => {
-
-  db.city(req.body).save().then(d => {
-      return db.state.findByIdAndUpdate(
-          req.body.state,
-          { $push: { cities: d._id } },
-          { new: true, useFindAndModify: false }
-      );
-  });
+  db.cart(req.body).save();
   res.send("Record saved successfully!!!");
 }
 );
 
 
 router.get( "/", async (req, res, next) => {
-    var data = await db.city.find({})   
+    var data = await db.cart.find({})    
     res.send(data);
   }
 );
 
 router.put( "/update/:id", async (req, res, next) => {
-    await db.city.findByIdAndUpdate(req.params.id,req.body);
+    await db.cart.findByIdAndUpdate(req.params.id,req.body);
     res.send("Record updated successfully!!!");
   }
 );
 
 router.delete( "/delete/:id", async (req, res, next) => {
-    await db.city.deleteOne({_id:req.params.id})
+    await db.cart.deleteOne({_id:req.params.id})
     res.send("Record delete successfully!!!");
   }
 );

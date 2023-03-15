@@ -9,6 +9,10 @@ const rolemodel = require("./models/role.model")
 const countrymodel = require("./models/country.model")
 const statemodel = require("./models/state.model")
 const citymodel = require("./models/city.model")
+const cartmodel = require("./models/cart.model")
+const ordermodel = require("./models/order.model")
+const orderitemsmodel = require("./models/orderitems.model")
+const checkoutmodel = require("./models/checkout.model")
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -30,6 +34,11 @@ module.exports = {
   role: mongoose.model("role", rolemodel.roleschema),
   country: mongoose.model("country", countrymodel.countryschema),
   state: mongoose.model("state", statemodel.stateschema),
-  city: mongoose.model("city", citymodel.cityschema)
+  city: mongoose.model("city", citymodel.cityschema),
+  cart: mongoose.model("cart", cartmodel.cartschema),
+  order: mongoose.model("order", ordermodel.orderschema),
+  orderitems: mongoose.model("orderitems", orderitemsmodel.orderitemsschema),
+  checkout: mongoose.model("checkout", checkoutmodel.checkoutschema),
+
 
 }
