@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const priceschema = new mongoose.Schema({
-    value: Number,
-    effectiveFrom: Date,
-    effectiveTo: Date,
-    product: { type: Schema.Types.ObjectId, ref: 'product' }
-    
+  user: { type: Schema.Types.ObjectId, ref: "users" },
+  value: Number,
+  effectiveFrom: String,
+  effectiveTo: String,
+  product: { type: Schema.Types.ObjectId, ref: "products" },
 });
 
 module.exports = {
-    priceschema
-}
+  priceschema,
+};

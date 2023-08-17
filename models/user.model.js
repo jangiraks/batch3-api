@@ -8,11 +8,11 @@ const userschema = new mongoose.Schema({
   mobile: Number,
   email: String,
   gender: String,
-  role: [{ type: Schema.Types.ObjectId, ref: 'role' }],
   password: String,
-  addressess: [{ type: Schema.Types.ObjectId, ref: 'address' }],
+  role: { type: Schema.Types.ObjectId, ref: "role" },
+  address: [{ type: Schema.Types.ObjectId, ref: "address" }],
 });
 
 module.exports = {
-  userschema
-}
+  userschema,
+};

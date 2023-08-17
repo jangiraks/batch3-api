@@ -1,18 +1,20 @@
 const mongoose = require("mongoose");
-const usermodel = require("./models/user.model")
-mongoose.set('strictQuery', false);
-const addressmodel = require("./models/address.model")
-const categorymodel = require("./models/category.model")
-const productmodel = require("./models/product.model")
-const pricemodel = require("./models/price.model")
-const rolemodel = require("./models/role.model")
-const countrymodel = require("./models/country.model")
-const statemodel = require("./models/state.model")
-const citymodel = require("./models/city.model")
-const cartmodel = require("./models/cart.model")
-const ordermodel = require("./models/order.model")
-const orderitemsmodel = require("./models/orderitems.model")
-const checkoutmodel = require("./models/checkout.model")
+const usermodel = require("./models/user.model");
+mongoose.set("strictQuery", false);
+const addressmodel = require("./models/address.model");
+const categorymodel = require("./models/category.model");
+const productmodel = require("./models/product.model");
+const pricemodel = require("./models/price.model");
+const rolemodel = require("./models/role.model");
+const countrymodel = require("./models/country.model");
+const statemodel = require("./models/state.model");
+const citymodel = require("./models/city.model");
+const cartmodel = require("./models/cart.model");
+const ordermodel = require("./models/order.model");
+const orderitemsmodel = require("./models/orderitems.model");
+const checkoutmodel = require("./models/checkout.model");
+const imagemodel = require("./models/image.model");
+const otpModel = require("./models/otp.model");
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -23,7 +25,6 @@ mongoose
   .then(() => {
     console.log("DB connected");
   });
-
 
 module.exports = {
   users: mongoose.model("users", usermodel.userschema),
@@ -39,6 +40,6 @@ module.exports = {
   order: mongoose.model("order", ordermodel.orderschema),
   orderitems: mongoose.model("orderitems", orderitemsmodel.orderitemsschema),
   checkout: mongoose.model("checkout", checkoutmodel.checkoutschema),
-
-
-}
+  image: mongoose.model("image", imagemodel.imageschema),
+  otp: mongoose.model("otp", otpModel.otpModel),
+};
