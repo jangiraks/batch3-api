@@ -6,6 +6,7 @@ const priceschema = new mongoose.Schema({
     effectiveFrom: Date,
     effectiveTo: Date,
     product: { type: Schema.Types.ObjectId, ref: 'product' }
+    
 });
 
 module.exports = {

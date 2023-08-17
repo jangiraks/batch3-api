@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { price } = require("../db");
 const { Schema } = mongoose;
 
 const productschema = new mongoose.Schema({
