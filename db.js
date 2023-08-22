@@ -6,15 +6,6 @@ const categorymodel = require("./models/category.model");
 const productmodel = require("./models/product.model");
 const pricemodel = require("./models/price.model");
 const rolemodel = require("./models/role.model");
-const countrymodel = require("./models/country.model");
-const statemodel = require("./models/state.model");
-const citymodel = require("./models/city.model");
-const cartmodel = require("./models/cart.model");
-const ordermodel = require("./models/order.model");
-const orderitemsmodel = require("./models/orderitems.model");
-const checkoutmodel = require("./models/checkout.model");
-const imagemodel = require("./models/image.model");
-const otpModel = require("./models/otp.model");
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -33,13 +24,4 @@ module.exports = {
   product: mongoose.model("product", productmodel.productschema),
   price: mongoose.model("price", pricemodel.priceschema),
   role: mongoose.model("role", rolemodel.roleschema),
-  country: mongoose.model("country", countrymodel.countryschema),
-  state: mongoose.model("state", statemodel.stateschema),
-  city: mongoose.model("city", citymodel.cityschema),
-  cart: mongoose.model("cart", cartmodel.cartschema),
-  order: mongoose.model("order", ordermodel.orderschema),
-  orderitems: mongoose.model("orderitems", orderitemsmodel.orderitemsschema),
-  checkout: mongoose.model("checkout", checkoutmodel.checkoutschema),
-  image: mongoose.model("image", imagemodel.imageschema),
-  otp: mongoose.model("otp", otpModel.otpModel),
 };

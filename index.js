@@ -32,5 +32,3 @@ app.use("/login", require("./controllers/login.controller"));
 // app.use("/email", require("./controllers/emailcontroller"));
 app.use("/image", require("./service/image.service"));
 app.use("/email", require("./controllers/emailRoutes"));
-
-app.listen(PORT, () => console.log(`api run on port ${PORT}`));
